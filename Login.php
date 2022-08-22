@@ -54,7 +54,7 @@
 </body>
 <?php                   
                     if(isset($_POST['login'])){
-                        $connection = mysqli_connect("localhost","root","","projectdb");
+                        $connection = mysqli_connect("109.70.148.58","safezoneelearnin_projectdb","0740730@Root","safezoneelearnin_root");
                         if(!$connection){
                             echo 'Connection Lost';
                             die();
