@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Timer</title>
+	<script src="css/jquery.js"></script>
+    <script>
+		$(function(){
+			var time = 7;
+
+			// get n
+			var n;
+			var url = 'question.php?n='+ (n+1)
+
+			function redirect(){
+				var id = setTimeout(redirect, 1000);
+				$(".timer").html(time);
+				if(time == 0){
+
+					clearTimeout(id);
+					window.location.href = url;
+
+				}
+				time --;
+			}
+			redirect();
+		});
+	</script>
+</head>
+<body>
+	<center><h1>Redirecting To Next Question<span class="timer"> 0 </span> Seconds</h1></center>
+
+</body>
+</html>

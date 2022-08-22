@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modal</title>
+
+	<style type="text/css">
+
+.modal-open {
+	padding: 8px 16px;
+	/*background: royalblue;*/
+	color: white;
+	border-radius: 4px;
+	outline: none;
+	border: none;
+}
+
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 2;
+	display: none;
+}
+
+.modal-content {
+	background: #fff;
+	margin-top: 100px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 8px 24px;
+	border-radius: 4px;
+	z-index: 4;
+	font-weight: 500;
+	padding: 10px 0;
+	font-size: 26px;
+}
+.modal-close {
+	float: right;
+	font-size: 20px;
+	border: 0;
+	outline: 0;
+	padding: 5px 8px;
+	border-radius: 50%;
+	transform: rotate(45deg);
+	cursor: pointer;
+}
+
+
+
+
+
+	</style>
+</head>
+<body>
+	 <img src="img/Im1.jpg" class="modal-open" data-modal="modal1" width="60" height="60;">
+	 <img src="img/Im1.jpg" class="modal-open" data-modal="modal2" width="60" height="60;">
+	 <img src="img/Im1.jpg" class="modal-open" data-modal="modal3" width="60" height="60;">
+
+	 <div class="modal" id="modal1">
+	 	<div class="modal-content">
+	 		ሙከራ ፈተና የመንገድ ምልክቶች ቅጣቶች ሙከራ ፈተና 
+	 		<div class="modal-close">+</div>
+	 	</div>
+	 </div>
+
+	  <div class="modal" id="modal2">
+	 	<div class="modal-content">
+	 		 የመንገድ ምልክቶች 
+	 		<div class="modal-close">+</div>
+	 	</div>
+	 </div>
+
+	 <div class="modal" id="modal3">
+	 	<div class="modal-content">
+	 		 የመንገድ ምልክቶች የመንገድ ምልክቶች  የመንገድ ምልክቶች  የመንገድ ምልክቶች  የመንገድ ምልክቶች 
+	 		 የመንገድ ምልክቶች የመንገድ ምልክቶች 
+	 		<div class="modal-close">+</div>
+	 	</div>
+	 </div>
+
+	 <script type="text/javascript">
+	 	var modalBtns = document.querySelectorAll('.modal-open');
+
+	 	modalBtns.forEach(function(btn){
+	 		btn.onclick = function() {
+	 			var modal = btn.getAttribute("data-modal");
+
+	 			document.getElementById(modal).style.display = "block";
+	 		};
+	 	});
+
+
+	 	var closeBtns = document.querySelectorAll(".modal-close");
+	 	closeBtns.forEach(function(btn){
+	 		btn.onclick = function() {
+	 			var modal = (btn.closest(".modal").style.display = "none");
+	 		};
+	 	});
+	 </script>
+
+</body>
+</html>

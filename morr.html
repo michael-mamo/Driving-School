@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="css/Morris.min.js"></script>
+	<script src="css/jquery.js"></script>
+	<script src="css/raphael.min.js"></script>
+	
+	<title></title>
+</head>
+<body>
+	<h2>Morris</h2>
+	<div id="graph"></div>
+
+
+</body>
+</html>
+<script>
+		
+		Morris.bar({
+      element: 'graph',
+  data: [
+    {value: 70, label: 'foo'},
+    {value: 15, label: 'bar'},
+    {value: 10, label: 'baz'},
+    {value: 5, label: 'A really really long label'}
+  ],
+  formatter: function (x) { return x + "%"}
+}).on('click', function(i, row){
+  console.log(i, row);
+});
+	</script>
